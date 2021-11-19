@@ -1,6 +1,6 @@
-APP_URL=http://in.localhost:8003/
-APP_KEY=<insert your generated key in here>
-APP_DEBUG=true
+APP_URL=https://clientes.pymesenlinea.com.ar/
+APP_KEY=base64:r1NxqJdY/VtM8IFhLfOfiACZ58xGnXTNkd5NP+HbYx4=
+APP_DEBUG=false
 MULTI_DB_ENABLED=false
 DB_HOST1=db
 DB_USERNAME1=ninja
@@ -17,3 +17,10 @@ DB_DATABASE=ninja
 DB_USERNAME=ninja
 DB_PASSWORD=ninja
 APP_CIPHER=AES-256-CBC
+
+MAIL_DRIVER=smtp
+MAIL_HOST=mail.pymesenlinea.com.ar
+MAIL_PORT=25
+MAIL_USERNAME=soporte@pymesenlinea.com.ar
+MAIL_PASSWORD=S4p4rt22021
+MAIL_ENCRYPTION=tls

@@ -16,12 +16,16 @@ services:
     # Run webserver nginx on port 80
     # Feel free to modify depending what port is already occupied
     ports: 
-      - "80:80"
+      - "8081:80"
       #- "443:443"
     networks:
+      - default
       - invoiceninja
-    extra_hosts:
-      - "in5.localhost:192.168.0.124 " #host and ip
+    environment:
+       VIRTUAL_HOST: ${VIRTUAL_HOST}
+       VIRTUAL_PORT: ${VIRTUAL_PORT}
+       LETSENCRYPT_HOST: ${LETSENCRYPT_HOST}
+       LETSENCRYPT_EMAIL: ${LETSENCRYPT_EMAIL}      
 
   app:
     image: invoiceninja/invoiceninja:5
@@ -87,4 +91,7 @@ services:
   #     
 
 networks:
+  default:
+    external:
+         name: ${NETWORK} 
   invoiceninja:
